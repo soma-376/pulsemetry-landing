@@ -1,0 +1,48 @@
+:root {
+  --bg: #f4f4f1;
+  --fg: #111827;
+  --fg-2: #4b5563;
+  --fg-3: #6b7280;
+  --line: #e2e5ea;
+  --line-soft: #eef0f3;
+  --ink: #0f1115;
+  --idle: #8a5a28;
+  --use: #33538f;
+  --ok: #89b48d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Apple SD Gothic Neo",
+    "Segoe UI",
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "tnum";
+  /* 한글이 단어 중간에서 줄바꿈되지 않게 한다. */
+  word-break: keep-all;
+}
+
+a {
+  color: var(--use);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
