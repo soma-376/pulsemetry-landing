@@ -1,21 +1,30 @@
 import type { Metadata, Viewport } from "next";
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 import "lenis/dist/lenis.css";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pulsemetry.co.kr";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: "Pulsemetry — AI에 쓰는 돈, 어디로 가는지",
-  description:
-    "Claude Code · Codex · Cursor 사용량과 비용을 조직·팀·구성원 단위로 확인하세요. 유휴 좌석과 사용 낭비를 찾아냅니다.",
+  metadataBase: new URL(SITE.url),
+  title: SITE.title,
+  description: SITE.description,
+  applicationName: SITE.name,
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   openGraph: {
     type: "website",
-    locale: "ko_KR",
-    siteName: "Pulsemetry",
-    title: "AI에 쓰는 돈, 어디로 가는지.",
-    description: "Claude Code · Codex · Cursor 사용량과 비용을 한 곳에서.",
+    url: "/",
+    locale: SITE.locale,
+    siteName: SITE.name,
+    title: SITE.title,
+    description: SITE.description,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: SITE.title }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.title,
+    description: SITE.description,
+    images: ["/og.png"],
   },
 };
 
